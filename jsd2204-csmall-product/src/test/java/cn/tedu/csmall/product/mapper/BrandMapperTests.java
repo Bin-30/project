@@ -28,4 +28,21 @@ public class BrandMapperTests {
         System.out.println(i);
     }
 
+    @Test
+    void testDeleteByIds(){
+        Long[] ids ={1L,2L};
+        int i = brandMapper.deleteByIds(ids);
+        System.out.println(i);
+    }
+
+    @Test
+    void testUpdate() {
+        Brand brand = new Brand();
+        brand.setId(5L);
+        brand.setName("华为");
+        brand.setDescription("adadad");
+        System.out.println("前"+brand);
+        brandMapper.update(brand);
+        System.out.println("后"+brand);
+    }
 }

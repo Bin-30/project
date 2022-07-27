@@ -1,7 +1,10 @@
 package cn.tedu.csmall.product.mapper;
 
 import cn.tedu.csmall.product.pojo.entity.Album;
+import cn.tedu.csmall.product.pojo.vo.AlbumStandardvo;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 /**
  * 相册数据的mapper接口
@@ -18,6 +21,17 @@ public interface AlbumMapper {
      */
     int insert(Album album);
 
+    int insertBatch(List<Album> albums);
 
     int deleteById(Long id);
+
+    int deleteByIds(Long ...id);
+
+    int update(Album album);
+
+    int count();
+
+    AlbumStandardvo getStandardById(Long id);
+
+
 }

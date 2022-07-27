@@ -11,9 +11,29 @@ import java.util.Date;
  */
 public class Category implements Serializable {
     private static final long serialVersionUID = 262333890776020254L;
+
+    @Override
+    public String toString() {
+        return "Category{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", parentId=" + parentId +
+                ", depth=" + depth +
+                ", keywords='" + keywords + '\'' +
+                ", sort=" + sort +
+                ", icon='" + icon + '\'' +
+                ", enable=" + enable +
+                ", isParent=" + isParent +
+                ", isDisplay=" + isDisplay +
+                ", gmtCreate=" + gmtCreate +
+                ", gmtModified=" + gmtModified +
+                '}';
+    }
+
     /**
      * 记录id
      */
+
 
 
     private Integer id;

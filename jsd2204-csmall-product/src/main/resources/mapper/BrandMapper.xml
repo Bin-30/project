@@ -18,6 +18,53 @@
         delete from pms_brand where id=#{id}
     </delete>
 
+    <delete id="deleteByIds">
+        delete from pms_brand where id in (
+        <foreach collection="array" item="id" separator=",">#{id}
+        </foreach>
+)
+    </delete>
+
+    <update id="update">
+        update pms_brand
+        <set>
+            <if test="name!=null">
+                name = #{name},
+            </if>
+            <if test="pinyin!=null">
+                pinyin = #{pinyin},
+            </if>
+            <if test="logo!=null">
+                logo = #{logo},
+            </if>
+            <if test="description!=null">
+                description = #{description},
+            </if>
+            <if test="keywords!=null">
+                keywords = #{keywords},
+            </if>
+            <if test="sort!=null">
+                sort = #{sort},
+            </if>
+            <if test="sales!=null">
+                sales = #{sales},
+            </if>
+            <if test="productCount!=null">
+                product_count = #{productCount},
+            </if>
+            <if test="commentCount!=null">
+                comment_count = #{commentCount},
+            </if>
+            <if test="enable!=null">
+                enable = #{enable},
+            </if>
+            <if test="positiveCommentCount!=null">
+                positive_comment_count = #{positivecommentCount},
+            </if>
+        </set>
+            where id=#{id}
+    </update>
+
 
 
 </mapper>

@@ -18,4 +18,8 @@ public interface BrandMapper {
     int insert(Brand brand);
 
     int deleteById(Long id);
+
+    int deleteByIds(Long[] ids);
+
+    int update(Brand brand);
 }
