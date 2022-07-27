@@ -1,6 +1,7 @@
 package cn.tedu.csmall.product.mapper;
 
 import cn.tedu.csmall.product.pojo.entity.Category;
+import cn.tedu.csmall.product.pojo.vo.CategoryStandardVo;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -25,4 +26,8 @@ public interface CategoryMapper {
     int deleteByIds(List<Long> ids);
 
     int update(Category category);
+
+    int count();
+
+    CategoryStandardVo getStandardById(Long id);
 }

@@ -14,10 +14,20 @@
                         #{commentCount},#{positiveCommentCount},#{enable})
     </insert>
 
+    <!--int insertBatch(List<Brand> brands)-->
+    <insert id="insertBatch" useGeneratedKeys="true" keyProperty="id">
+        insert into pms_brand (name,pinyin,logo) values
+                                <foreach collection="list" item="brand" separator=",">
+                                    (#{brand.name},#{brand.pinyin},#{brand.logo})
+                                </foreach>
+    </insert>
+
+    <!--int deleteById(Long id)-->
     <delete id="deleteById">
         delete from pms_brand where id=#{id}
     </delete>
 
+    <!--int deleteByIds(Long[] ids)-->
     <delete id="deleteByIds">
         delete from pms_brand where id in (
         <foreach collection="array" item="id" separator=",">#{id}
@@ -25,6 +35,7 @@
 )
     </delete>
 
+    <!--int update(Brand brand)-->
     <update id="update">
         update pms_brand
         <set>
@@ -64,6 +75,40 @@
         </set>
             where id=#{id}
     </update>
+
+    <!--BrandStandardVo getStandardById(Long id)-->
+    <select id="getStandardById" resultMap="StandardResultMap">
+        <include refid="StandardQueryFields"/>
+    </select>
+    <sql id="StandardQueryFields">
+        select name,pinyin,logo,description,keywords,sort,
+               sales,product_count,comment_count,
+               positive_comment_count,enable
+        from pms_brand
+        where id=#{id}
+    </sql>
+    <resultMap id="StandardResultMap" type="cn.tedu.csmall.product.pojo.vo.BrandStandardVo">
+        <result column="product_count" property="productCount"/>
+        <result column="comment_count" property="commentCount"/>
+        <result column="positive_comment_count" property="positiveCommentCount"/>
+    </resultMap>
+
+    <!--List<BrandListItemVo> list()-->
+    <select id="list" resultMap="ListItemResultMap">
+        <include refid="ListItemQueryFields"/>
+    </select>
+    <sql id="ListItemQueryFields">
+        select id,name,logo from pms_brand order by sort desc
+    </sql>
+    <resultMap id="ListItemResultMap" type="cn.tedu.csmall.product.pojo.vo.BrandListItemVo">
+
+    </resultMap>
+
+    <!--int count()-->
+    <select id="count" resultType="int">
+        select count(*) from pms_brand order by name
+    </select>
+
 
 
 

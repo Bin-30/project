@@ -2,6 +2,7 @@ package cn.tedu.csmall.product.mapper;
 
 import cn.tedu.csmall.product.pojo.entity.Album;
 import cn.tedu.csmall.product.pojo.entity.Category;
+import cn.tedu.csmall.product.pojo.vo.CategoryStandardVo;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -46,5 +47,17 @@ public class CategoryMapperTests {
         mapper.update(category);
         System.out.println("后"+category);
     }
+    @Test
+    void testCount(){
+        int count = mapper.count();
+        System.out.println(count);
+    }
+
+    @Test
+    void testStandardById(){
+       CategoryStandardVo standardById = mapper.getStandardById(3L);
+       System.out.println(standardById);
+    }
+
 
 }

@@ -12,10 +12,12 @@
                           #{isParent},#{isDisplay})
     </insert>
 
+    <!--int deleteById(Long id)-->
     <delete id="deleteById">
         delete from pms_category where id=#{id}
     </delete>
 
+    <!-- int deleteByIds(List<Long> ids)-->
     <delete id="deleteByIds">
         delete from pms_category where id in (
             <foreach collection="list" separator="," item="id">
@@ -24,6 +26,7 @@
             )
     </delete>
 
+    <!--int update(Category category)-->
     <update id="update">
         update pms_category
         <set>
@@ -58,5 +61,23 @@
         where id=#{id}
     </update>
 
+    <!-- int count();-->
+    <select id="count" resultType="int">
+        select count(*) from pms_category order by name
+    </select>
 
+    <!--CategoryStandardVo getStandardById(Long id)-->
+    <select id="getStandardById" resultMap="StandardResultMap">
+        <include refid="StandardById"/>
+    </select>
+    <sql id="StandardById">
+        select name,parent_id,depth,keywords,sort,icon,enable,
+               is_parent,is_display
+        from pms_category where id=#{id}
+    </sql>
+    <resultMap id="StandardResultMap" type="cn.tedu.csmall.product.pojo.vo.CategoryStandardVo">
+        <result column="parent_id" property="parentId"/>
+        <result column="is_parent" property="isParent"/>
+        <result column="is_display" property="isDisplay"/>
+    </resultMap>
 </mapper>

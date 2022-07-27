@@ -1,8 +1,7 @@
 package cn.tedu.csmall.product.mapper;
 
 import cn.tedu.csmall.product.pojo.entity.Album;
-import cn.tedu.csmall.product.pojo.entity.Brand;
-import cn.tedu.csmall.product.pojo.vo.AlbumStandardvo;
+import cn.tedu.csmall.product.pojo.vo.AlbumStandardVo;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -65,7 +64,7 @@ public class AlbumMapperTests {
 
     @Test
     void testSelect(){
-        AlbumStandardvo standardById = mapper.getStandardById(3L);
+        AlbumStandardVo standardById = mapper.getStandardById(3L);
         System.out.println(standardById);
     }
 

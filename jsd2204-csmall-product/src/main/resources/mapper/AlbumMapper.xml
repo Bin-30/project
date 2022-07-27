@@ -31,6 +31,7 @@
             )
     </delete>
 
+    <!--int update(Album album)-->
     <update id="update">
         update pms_album
         <set>
@@ -47,11 +48,13 @@
             where id=#{id}
     </update>
 
+    <!--int count();-->
     <select id="count" resultType="int">
         select count(*) from pms_album
     </select>
 
-    <select id="getStandardById" resultType="cn.tedu.csmall.product.pojo.vo.AlbumStandardvo">
+    <!--AlbumStandardVo getStandardById(Long id)-->
+    <select id="getStandardById" resultType="cn.tedu.csmall.product.pojo.vo.AlbumStandardVo">
         select id,name,description,sort from pms_album where id=#{id}
     </select>
 

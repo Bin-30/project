@@ -3,11 +3,12 @@ package cn.tedu.csmall.product.pojo.vo;
 import lombok.Data;
 
 import java.io.Serializable;
+
 @Data
-public class AlbumStandardvo implements Serializable {
+public class BrandListItemVo implements Serializable {
     private Long id;
     private String name;
-    private String description;
-    private Integer sort;
+    private String logo;
+
 }
 

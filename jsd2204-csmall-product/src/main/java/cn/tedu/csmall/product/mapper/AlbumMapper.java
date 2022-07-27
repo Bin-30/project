@@ -1,7 +1,7 @@
 package cn.tedu.csmall.product.mapper;
 
 import cn.tedu.csmall.product.pojo.entity.Album;
-import cn.tedu.csmall.product.pojo.vo.AlbumStandardvo;
+import cn.tedu.csmall.product.pojo.vo.AlbumStandardVo;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -31,7 +31,7 @@ public interface AlbumMapper {
 
     int count();
 
-    AlbumStandardvo getStandardById(Long id);
+    AlbumStandardVo getStandardById(Long id);
 
 
 }
