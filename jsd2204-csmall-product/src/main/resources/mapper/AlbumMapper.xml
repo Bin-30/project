@@ -58,5 +58,12 @@
         select id,name,description,sort from pms_album where id=#{id}
     </select>
 
+    <select id="countByName" resultType="int">
+        select count(*) from pms_album where name=#{name}
+    </select>
+
+    <select id="countById" resultType="int">
+        select count(*) from pms_album where id=#{id}
+    </select>
 
 </mapper>

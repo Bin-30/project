@@ -33,5 +33,9 @@ public interface AlbumMapper {
 
     AlbumStandardVo getStandardById(Long id);
 
+    int countByName(String name);
+
+    int countById(Long id);
+
 
 }

@@ -7,4 +7,6 @@ import org.springframework.stereotype.Repository;
 public interface BrandCategoryMapper {
     int insert(BrandCategory brandCategory);
     int deleteById(Long id);
+    int countById(Long BId,Long CId);
+    int countId(Long id);
 }

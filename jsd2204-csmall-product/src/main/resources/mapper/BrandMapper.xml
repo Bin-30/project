@@ -109,6 +109,14 @@
         select count(*) from pms_brand order by name
     </select>
 
+    <select id="countByName" resultType="int">
+        select count(*) from pms_brand where name=#{name}
+    </select>
+
+    <select id="countById" resultType="int">
+        select count(*) from pms_brand where id=#{id}
+    </select>
+
 
 
 

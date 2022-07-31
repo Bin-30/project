@@ -29,5 +29,10 @@ public interface CategoryMapper {
 
     int count();
 
+    int countByName(String name);
+
+    int countById(Long id);
+
     CategoryStandardVo getStandardById(Long id);
+
 }

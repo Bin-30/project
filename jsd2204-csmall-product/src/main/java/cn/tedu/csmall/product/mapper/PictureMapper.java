@@ -7,4 +7,6 @@ import org.springframework.stereotype.Repository;
 public interface PictureMapper {
     int insert(Picture picture);
     int deleteById(Long id);
+    int countByUrl(String url);
+    int countById(Long id);
 }

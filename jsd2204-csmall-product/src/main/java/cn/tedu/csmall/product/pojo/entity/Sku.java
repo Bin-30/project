@@ -1,6 +1,9 @@
 package cn.tedu.csmall.product.pojo.entity;
 
+import lombok.Data;
+
 import java.io.Serializable;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 /**
@@ -9,6 +12,7 @@ import java.util.Date;
  * @author makejava
  * @since 2022-07-25 19:15:29
  */
+@Data
 public class Sku implements Serializable {
     private static final long serialVersionUID = -14340884103080671L;
 
@@ -80,148 +84,13 @@ public class Sku implements Serializable {
     /**
      * 数据创建时间
      */
-    private Date gmtCreate;
+    private LocalDateTime gmtCreate;
     /**
      * 数据最后修改时间
      */
-    private Date gmtModified;
+    private  LocalDateTime gmtModified;
 
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public Integer getSpuId() {
-        return spuId;
-    }
-
-    public void setSpuId(Integer spuId) {
-        this.spuId = spuId;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getBarCode() {
-        return barCode;
-    }
-
-    public void setBarCode(String barCode) {
-        this.barCode = barCode;
-    }
-
-    public Integer getAttributeTemplateId() {
-        return attributeTemplateId;
-    }
-
-    public void setAttributeTemplateId(Integer attributeTemplateId) {
-        this.attributeTemplateId = attributeTemplateId;
-    }
-
-    public String getSpecifications() {
-        return specifications;
-    }
-
-    public void setSpecifications(String specifications) {
-        this.specifications = specifications;
-    }
-
-    public Integer getAlbumId() {
-        return albumId;
-    }
-
-    public void setAlbumId(Integer albumId) {
-        this.albumId = albumId;
-    }
-
-    public String getPictures() {
-        return pictures;
-    }
-
-    public void setPictures(String pictures) {
-        this.pictures = pictures;
-    }
-
-    public Double getPrice() {
-        return price;
-    }
-
-    public void setPrice(Double price) {
-        this.price = price;
-    }
-
-    public Integer getStock() {
-        return stock;
-    }
-
-    public void setStock(Integer stock) {
-        this.stock = stock;
-    }
-
-    public Integer getStockThreshold() {
-        return stockThreshold;
-    }
-
-    public void setStockThreshold(Integer stockThreshold) {
-        this.stockThreshold = stockThreshold;
-    }
-
-    public Integer getSales() {
-        return sales;
-    }
-
-    public void setSales(Integer sales) {
-        this.sales = sales;
-    }
-
-    public Integer getCommentCount() {
-        return commentCount;
-    }
-
-    public void setCommentCount(Integer commentCount) {
-        this.commentCount = commentCount;
-    }
-
-    public Integer getPositiveCommentCount() {
-        return positiveCommentCount;
-    }
-
-    public void setPositiveCommentCount(Integer positiveCommentCount) {
-        this.positiveCommentCount = positiveCommentCount;
-    }
-
-    public Integer getSort() {
-        return sort;
-    }
-
-    public void setSort(Integer sort) {
-        this.sort = sort;
-    }
-
-    public Date getGmtCreate() {
-        return gmtCreate;
-    }
-
-    public void setGmtCreate(Date gmtCreate) {
-        this.gmtCreate = gmtCreate;
-    }
-
-    public Date getGmtModified() {
-        return gmtModified;
-    }
-
-    public void setGmtModified(Date gmtModified) {
-        this.gmtModified = gmtModified;
-    }
 
 }
 

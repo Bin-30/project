@@ -17,7 +17,7 @@ public class AlbumMapperTests {
     @Test
     void testInsert() {
         Album album = new Album();
-        album.setName("asdsadsa").setDescription("asdasdasd").setSort(63);
+        album.setName("hongmi").setDescription("asdasdasd").setSort(63);
         int i = mapper.insert(album);
         System.out.println(i);
     }

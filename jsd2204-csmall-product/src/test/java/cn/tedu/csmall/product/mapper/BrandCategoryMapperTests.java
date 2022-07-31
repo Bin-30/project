@@ -14,8 +14,8 @@ public class BrandCategoryMapperTests {
     @Test
     void testInsert() {
         BrandCategory brandCategory = new BrandCategory();
-        brandCategory.setBrandId(2);
-        brandCategory.setCategoryId(2);
+        brandCategory.setBrandId(2L);
+        brandCategory.setCategoryId(2L);
         int i = mapper.insert(brandCategory);
         System.out.println(i);
     }

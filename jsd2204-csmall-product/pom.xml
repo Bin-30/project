@@ -26,10 +26,15 @@
 
     <!--依赖-->
     <dependencies>
-        <!--springboot基础依赖项-->
+        <!--springboot整合spring MVC，包含spring boot的基础依赖项-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
         </dependency>
 
         <!-- MySQL依赖项，仅运行时需要 -->

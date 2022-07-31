@@ -80,4 +80,12 @@
         <result column="is_parent" property="isParent"/>
         <result column="is_display" property="isDisplay"/>
     </resultMap>
+
+    <select id="countByName" resultType="int">
+        select count(*) from pms_category where name=#{name}
+    </select>
+
+    <select id="countById" resultType="int">
+        select count(*) from pms_category where id=#{id}
+    </select>
 </mapper>

@@ -16,6 +16,14 @@
         delete from pms_picture where id=#{id}
     </delete>
 
+    <select id="countByUrl" resultType="int">
+        select count(*) from pms_picture where url=#{url}
+    </select>
+
+    <select id="countById" resultType="int">
+        select count(*) from pms_picture where id=#{id}
+    </select>
+
 
 
 </mapper>

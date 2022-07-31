@@ -1,6 +1,9 @@
 package cn.tedu.csmall.product.pojo.entity;
 
+import lombok.Data;
+
 import java.io.Serializable;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 /**
@@ -9,6 +12,7 @@ import java.util.Date;
  * @author makejava
  * @since 2022-07-25 19:16:49
  */
+@Data
 public class Spu implements Serializable {
     private static final long serialVersionUID = -27721270037564117L;
 
@@ -132,264 +136,17 @@ public class Spu implements Serializable {
     /**
      * 审核通过时间（冗余）
      */
-    private Date gmtCheck;
+    private LocalDateTime gmtCheck;
     /**
      * 数据创建时间
      */
-    private Date gmtCreate;
+    private  LocalDateTime gmtCreate;
     /**
      * 数据最后修改时间
      */
-    private Date gmtModified;
+    private  LocalDateTime gmtModified;
 
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getTypeNumber() {
-        return typeNumber;
-    }
-
-    public void setTypeNumber(String typeNumber) {
-        this.typeNumber = typeNumber;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public Double getListPrice() {
-        return listPrice;
-    }
-
-    public void setListPrice(Double listPrice) {
-        this.listPrice = listPrice;
-    }
-
-    public Integer getStock() {
-        return stock;
-    }
-
-    public void setStock(Integer stock) {
-        this.stock = stock;
-    }
-
-    public Integer getStockThreshold() {
-        return stockThreshold;
-    }
-
-    public void setStockThreshold(Integer stockThreshold) {
-        this.stockThreshold = stockThreshold;
-    }
-
-    public String getUnit() {
-        return unit;
-    }
-
-    public void setUnit(String unit) {
-        this.unit = unit;
-    }
-
-    public Integer getBrandId() {
-        return brandId;
-    }
-
-    public void setBrandId(Integer brandId) {
-        this.brandId = brandId;
-    }
-
-    public String getBrandName() {
-        return brandName;
-    }
-
-    public void setBrandName(String brandName) {
-        this.brandName = brandName;
-    }
-
-    public Integer getCategoryId() {
-        return categoryId;
-    }
-
-    public void setCategoryId(Integer categoryId) {
-        this.categoryId = categoryId;
-    }
-
-    public String getCategoryName() {
-        return categoryName;
-    }
-
-    public void setCategoryName(String categoryName) {
-        this.categoryName = categoryName;
-    }
-
-    public Integer getAttributeTemplateId() {
-        return attributeTemplateId;
-    }
-
-    public void setAttributeTemplateId(Integer attributeTemplateId) {
-        this.attributeTemplateId = attributeTemplateId;
-    }
-
-    public Integer getAlbumId() {
-        return albumId;
-    }
-
-    public void setAlbumId(Integer albumId) {
-        this.albumId = albumId;
-    }
-
-    public String getPictures() {
-        return pictures;
-    }
-
-    public void setPictures(String pictures) {
-        this.pictures = pictures;
-    }
-
-    public String getKeywords() {
-        return keywords;
-    }
-
-    public void setKeywords(String keywords) {
-        this.keywords = keywords;
-    }
-
-    public String getTags() {
-        return tags;
-    }
-
-    public void setTags(String tags) {
-        this.tags = tags;
-    }
-
-    public Integer getSales() {
-        return sales;
-    }
-
-    public void setSales(Integer sales) {
-        this.sales = sales;
-    }
-
-    public Integer getCommentCount() {
-        return commentCount;
-    }
-
-    public void setCommentCount(Integer commentCount) {
-        this.commentCount = commentCount;
-    }
-
-    public Integer getPositiveCommentCount() {
-        return positiveCommentCount;
-    }
-
-    public void setPositiveCommentCount(Integer positiveCommentCount) {
-        this.positiveCommentCount = positiveCommentCount;
-    }
-
-    public Integer getSort() {
-        return sort;
-    }
-
-    public void setSort(Integer sort) {
-        this.sort = sort;
-    }
-
-    public Integer getIsDeleted() {
-        return isDeleted;
-    }
-
-    public void setIsDeleted(Integer isDeleted) {
-        this.isDeleted = isDeleted;
-    }
-
-    public Integer getIsPublished() {
-        return isPublished;
-    }
-
-    public void setIsPublished(Integer isPublished) {
-        this.isPublished = isPublished;
-    }
-
-    public Integer getIsNewArrival() {
-        return isNewArrival;
-    }
-
-    public void setIsNewArrival(Integer isNewArrival) {
-        this.isNewArrival = isNewArrival;
-    }
-
-    public Integer getIsRecommend() {
-        return isRecommend;
-    }
-
-    public void setIsRecommend(Integer isRecommend) {
-        this.isRecommend = isRecommend;
-    }
-
-    public Integer getIsChecked() {
-        return isChecked;
-    }
-
-    public void setIsChecked(Integer isChecked) {
-        this.isChecked = isChecked;
-    }
-
-    public String getCheckUser() {
-        return checkUser;
-    }
-
-    public void setCheckUser(String checkUser) {
-        this.checkUser = checkUser;
-    }
-
-    public Date getGmtCheck() {
-        return gmtCheck;
-    }
-
-    public void setGmtCheck(Date gmtCheck) {
-        this.gmtCheck = gmtCheck;
-    }
-
-    public Date getGmtCreate() {
-        return gmtCreate;
-    }
-
-    public void setGmtCreate(Date gmtCreate) {
-        this.gmtCreate = gmtCreate;
-    }
-
-    public Date getGmtModified() {
-        return gmtModified;
-    }
-
-    public void setGmtModified(Date gmtModified) {
-        this.gmtModified = gmtModified;
-    }
 
 }
 

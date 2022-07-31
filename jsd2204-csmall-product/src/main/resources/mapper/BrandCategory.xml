@@ -14,6 +14,14 @@
         delete from pms_brand_category where id=#{id}
     </delete>
 
+    <select id="countById" resultType="int">
+        select count(*) from pms_brand_category where brand_id=#{BId} and category_id=#{CId}
+    </select>
+
+    <select id="countId" resultType="int">
+        select count(*) from pms_brand_category where id=#{id}
+    </select>
+
 
 
 </mapper>

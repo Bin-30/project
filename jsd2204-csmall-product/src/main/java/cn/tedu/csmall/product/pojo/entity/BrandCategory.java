@@ -1,6 +1,9 @@
 package cn.tedu.csmall.product.pojo.entity;
 
+import lombok.Data;
+
 import java.io.Serializable;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 /**
@@ -9,6 +12,7 @@ import java.util.Date;
  * @author makejava
  * @since 2022-07-25 19:05:59
  */
+@Data
 public class BrandCategory implements Serializable {
     private static final long serialVersionUID = -67069206968020523L;
 
@@ -20,64 +24,24 @@ public class BrandCategory implements Serializable {
      * 记录id
      */
 
-    private Integer id;
+    private Long id;
     /**
      * 品牌id
      */
-    private Integer brandId;
+    private Long brandId;
     /**
      * 类别id
      */
-    private Integer categoryId;
+    private Long categoryId;
     /**
      * 数据创建时间
      */
-    private Date gmtCreate;
+    private  LocalDateTime gmtCreate;
     /**
      * 数据最后修改时间
      */
-    private Date gmtModified;
+    private LocalDateTime gmtModified;
 
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public Integer getBrandId() {
-        return brandId;
-    }
-
-    public void setBrandId(Integer brandId) {
-        this.brandId = brandId;
-    }
-
-    public Integer getCategoryId() {
-        return categoryId;
-    }
-
-    public void setCategoryId(Integer categoryId) {
-        this.categoryId = categoryId;
-    }
-
-    public Date getGmtCreate() {
-        return gmtCreate;
-    }
-
-    public void setGmtCreate(Date gmtCreate) {
-        this.gmtCreate = gmtCreate;
-    }
-
-    public Date getGmtModified() {
-        return gmtModified;
-    }
-
-    public void setGmtModified(Date gmtModified) {
-        this.gmtModified = gmtModified;
-    }
 
 }
 

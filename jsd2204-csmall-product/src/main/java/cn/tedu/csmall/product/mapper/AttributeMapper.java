@@ -7,4 +7,6 @@ import org.springframework.stereotype.Repository;
 public interface AttributeMapper {
     int insert(Attribute attribute);
     int deleteById(Long id);
+    int countByName(String name);
+    int countById(Long id);
 }

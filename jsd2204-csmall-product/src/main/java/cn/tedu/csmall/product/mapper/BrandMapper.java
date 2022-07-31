@@ -35,5 +35,9 @@ public interface BrandMapper {
 
     int count();
 
+    int countByName(String name);
+
+    int countById(Long id);
+
 
 }

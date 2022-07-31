@@ -18,6 +18,13 @@
         delete from pms_attribute where id=#{id}
     </delete>
 
+    <select id="countByName" resultType="int">
+        select count(*) from pms_attribute where name=#{name}
+    </select>
+
+    <select id="countById" resultType="int">
+        select count(*) from pms_attribute where  id=#{id}
+    </select>
 
 
 </mapper>
