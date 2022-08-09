@@ -1,0 +1,11 @@
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+
+spring:
+  jackson:
+    default-property-inclusion: non_null
+  profiles:
+    active: dev
+
+knife4j:
+  enable: true

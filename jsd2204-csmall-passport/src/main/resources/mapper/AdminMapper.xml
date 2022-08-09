@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.tedu.csmall.passport.mapper.AdminMapper">
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id">
+        insert into ams_admin (username, password, nickname, avatar,
+                               phone, email, description, enable,
+                               last_login_ip, login_count)
+                       values (#{username},#{password},#{nickname},
+                               #{avatar},#{phone},#{email},#{description},
+                               #{enable},#{lastLoginIp},#{loginCount})
+    </insert>
+
+    <select id="countByName" resultType="int">
+        select count(*) from ams_admin where username=#{username}
+    </select>
+
+    <select id="selectByName" resultMap="LoginMap">
+        select ams_admin.id,username,password,enable,value from ams_admin
+        left join ams_admin_role on ams_admin.id = ams_admin_role.admin_id
+        left join ams_role_permission on ams_admin_role.id = ams_role_permission.role_id
+        left join ams_permission on ams_role_permission.permission_id = ams_permission.id
+        where username=#{username}
+    </select>
+    <resultMap id="LoginMap" type="cn.tedu.csmall.passport.pojo.vo.AdminLoginInfoVo">
+        <id column="id" property="id"/>
+        <result column="username" property="username"></result>
+        <result column="password" property="password"></result>
+        <result column="enable" property="enable"></result>
+        <collection property="permissions" ofType="String">
+            <constructor>
+                <arg column="value"/>
+            </constructor>
+        </collection>
+    </resultMap>
+</mapper>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.tedu.csmall.passport.mapper.RoleMapper">
+
+    <select id="list" resultMap="listMap">
+        select id,name,description,sort from ams_role
+    </select>
+    <resultMap id="listMap" type="cn.tedu.csmall.passport.pojo.vo.RoleStandardVo">
+        <id column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="description" property="description"/>
+        <result column="sort" property="sort"/>
+    </resultMap>
+</mapper>
